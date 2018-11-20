@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SnmpAgent"
+             x:Class="SnmpAgent.MainPage">
+
+    <StackLayout>
+        <!-- Place new controls here -->
+        <!--<Label Text="Welcome to Xamarin.Forms!" 
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />-->
+        <Grid Padding="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="SNMP Agent" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+                   FontSize="Large"/>
+
+            <Label Text="#SNMP Agent Calltech" FontSize="Medium"
+                   Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"/>
+
+            <Label Text="IP" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" VerticalOptions="Center"/>
+            <Picker x:Name="IpPicker"
+                    Grid.Row="2" Grid.Column="1"/>
+
+            <Label Text="Port" Grid.Row="3" Grid.Column="0" VerticalOptions="Center"/>
+            <Entry x:Name="PortEntry" 
+                   Text="1024" 
+                   Keyboard="Numeric"
+                   Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"/>
+
+
+            <Button x:Name="ActEnabledExecuteButton"
+                    Text="Start listening" 
+                    Clicked="ActEnabledExecute"
+                    TextColor="White" 
+                    BackgroundColor="Green"
+                    Grid.Row="5" Grid.ColumnSpan="3" CornerRadius="25" />
+        </Grid>
+        <ScrollView>
+            <Label x:Name="LogLabel"
+                   Text="Log label" 
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand" 
+                   IsVisible="False"/>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>
